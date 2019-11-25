@@ -2,6 +2,73 @@
 
 # 代码
 
+## 整数因子分解问题
+
+#### Problem Description
+
+大于1的正整数n可以分解为：n=x1*x2*…*xm。例如，当n=12 时，共有8 种不同的分解式：
+12=12；
+12=6*2；
+12=4*3；
+12=3*4；
+12=3*2*2；
+12=2*6；
+12=2*3*2；
+12=2*2*3。
+对于给定的正整数n，计算n共有多少种不同的分解式。
+
+#### Input
+
+输入数据只有一行，有1个正整数n (1≤n≤2000000000)。
+
+#### Output
+
+将计算出的不同的分解式数输出。
+
+#### Sample Input
+
+```
+12
+```
+
+#### Sample Output
+
+```
+8
+```
+
+#### code
+
+```
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(int n)
+{
+    int sum=1;
+    for(int i=2;i<=sqrt(n);i++)
+    {
+        if(n%i==0)
+        {
+            if(i*i==n)sum+=f(i);
+            else sum=sum+f(i)+f(n/i);
+        }
+    }
+    return sum;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<f(n)<<endl;
+    return 0;
+}
+```
+
+
+
 ## 最大字段和之分治算法
 
 #### Problem Description
@@ -63,7 +130,7 @@ int maxx(int l,int r)
         int mid=(l+r)/2;
         int lmax=maxx(l,mid);
         int rmax=maxx(mid+1,r);
-        int s=0;
+        int s=0;//！！！
         for(int i=l;i<=r;i++)
         {
             if(s+a[i]>0)
@@ -200,6 +267,35 @@ int main()
 
     return 0;
 }
+```
+
+#### code two
+
+```c++
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,x,a[110],b[110];
+    while(cin>>n>>x)
+    {
+        for(int i=1;i<=n;i++)
+            cin>>a[i]>>b[i];
+        int val[1100]={0};
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=x;j>=a[i];j--)
+            {
+                val[j]=max(val[j],val[j-a[i]]+b[i]);
+            }
+        }
+        cout<<val[x]<<endl;
+    }
+    return 0;
+}
+
 ```
 
 

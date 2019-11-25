@@ -539,6 +539,90 @@ int main()
 }
 ```
 
+## 子集和问题
+
+#### Problem Description
+
+子集和问题的一个实例为〈S,t〉。其中，S={ x1 ， x2 ，…，xn }是一个正整数的集合，c是一个正整数。子集和问题判定是否存在S的一个子集S1，使得：
+![img](https://acm.sdut.edu.cn/image/1764.png)。
+试设计一个解子集和问题的回溯法。
+对于给定的正整数的集合S={ x1 ， x2 ，…，xn }和正整数c，计算S 的一个子集S1，使得：
+![img](https://acm.sdut.edu.cn/image/1764.png)。
+
+#### Input
+
+输入数据的第1 行有2 个正整数n 和c（n≤10000，c≤10000000），n 表示S 的大小，c是子集和的目标值。接下来的1 行中，有n个正整数，表示集合S中的元素。
+
+#### Output
+
+将子集和问题的解输出。当问题无解时，输出“No Solution!”。
+
+#### Sample Input
+
+```
+5 10
+2 2 6 5 4
+```
+
+#### Sample Output
+
+```
+2 2 6
+```
+
+#### code
+
+```c++
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int n,c,a[10050],x[10050],rest,sum=0;
+
+bool track(int t)
+{
+    rest-=a[t];
+    if(sum==c)return true;
+    if(t>n)return false;
+    if(sum+a[t]<=c)
+    {
+        x[t]=1;
+        sum+=a[t];
+        if(track(t+1))return true;
+        sum-=a[t];
+    }
+    if(sum+rest>=c)
+    {
+        x[t]=0;
+        if(track(t+1))return true;
+    }
+    rest+=a[t];
+    return false;
+
+}
+
+int main()
+{
+    cin>>n>>c;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        rest+=a[i];
+    }
+    if(!track(1))cout<<"No Solution!"<<endl;
+    else
+    {
+        for(int i=1;i<=n;i++)
+        {
+            if(x[i]==1)cout<<a[i]<<" ";
+
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+```
+
 
 
 ## 工作分配问题

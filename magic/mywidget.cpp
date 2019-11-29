@@ -8,7 +8,7 @@
 #include <QIODevice>
 #include <QTextStream>
 
-#define MODULES_DRIVER "/root/modules_driver.sh" //加载模块命令目录
+#define MODULES_DRIVER "./root/modules_driver.sh" //加载模块命令目录
 
 MyWidget::MyWidget(QWidget *parent)
     : QWidget(parent)
@@ -83,7 +83,7 @@ void MyWidget:: Insmod_moudles()
 void MyWidget::on_pb_motor_on_clicked()
 {
     QProcess *process=new QProcess;
-    process->start("/root/motor/dcm_test");
+    process->start("./root/motor/dcm_main.c");
     process->waitForStarted();
 }
 

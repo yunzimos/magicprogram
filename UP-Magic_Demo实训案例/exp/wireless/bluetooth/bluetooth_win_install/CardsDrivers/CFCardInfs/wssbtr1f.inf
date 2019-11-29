@@ -1,0 +1,52 @@
+[Version]
+Signature=$CHICAGO$
+Class = Multifunction
+ClassGuid = {4d36e971-e325-11ce-bfc1-08002be10318} 
+Provider="National Semiconductor Sweden AB"
+
+[Manufacturer]
+"National Semiconductor Sweden AB"=WSS
+
+[DestinationDirs]
+DefaultDestDir=10,System32\Drivers
+
+[SourceDisksFiles]
+;wssbtr1f.sys=1
+
+[SourceDisksNames]
+1="BlueCard Install CD", "", 0001
+
+
+[WSS]
+;"BlueCard Bluetooth PCCARD Driver"=WssBluetoothInstall,PCMCIA\BlueCard-LSE041-0264-0004
+"Bluetooth PCCARD Driver"=WssBluetoothInstall,PCMCIA\BlueCard-LSE041-FDC3
+"Bluetooth CF-Card Driver"=WssBluetoothInstall,PCMCIA\WSS-LSE039-EAC3
+"Bluetooth New Driver"=WssBluetoothInstall,PCMCIA\BTCFCARD-LSE139-81F7
+
+[WssBluetoothInstall]
+AddReg=WssBluetooth.AddReg, WSSSymLink.AddReg
+CopyFiles=WssBluetooth.CopyFiles
+
+[WssBluetooth.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,wssbtr1f.sys
+
+[WssBluetooth.CopyFiles]
+;wssbtr1f.sys,,,2
+
+[WSSSymLink.AddReg]
+HKLM,"System\Currentcontrolset\Services\wssbtr1f\Parameters",SymbolicLink,,"COM30"
+
+;for Win2000 only below
+[WssBluetoothInstall.NT]
+AddReg=WSSSymLink.AddReg
+CopyFiles=WssBluetooth.CopyFiles
+
+[WssBluetoothInstall.NT.Services]
+AddService=wssbtr1f,2,WssBluetoothService
+
+[WssBluetoothService]
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\wssbtr1f.sys

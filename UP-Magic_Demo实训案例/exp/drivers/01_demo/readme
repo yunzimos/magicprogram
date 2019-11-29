@@ -1,0 +1,5 @@
+#readme
+执行此demo，需要在 usr/src/ 目录下建立指向linux内核的符号连接。
+若linux内核路径是 /usr/src/linux-2.4.xxx，那么执行建立符号连接的命令是：
+
+ln -s /usr/src/linux-2.4.xxx /usr/src/linux

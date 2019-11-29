@@ -1,0 +1,351 @@
+;; btcusb.inf
+
+;;
+;;IVT Corporation Bluetooth USB Device Installation Script
+;;
+;; For Windows 98SE, Windows Me, Windows 2000 and Windows XP
+;;
+;; Copyright (c) 2000-2004, IVT Corporation.
+;; http://www.ivtcorporation.com
+;;
+
+;--------- Version Section ---------------------------------------------------
+
+[Version]
+Signature="$Windows 95$"
+Provider=%ProviderName%
+DriverVer=06/11/2002,2.0.10
+
+; If device fits one of the standard classes, use the
+; name and GUID here, otherwise create your own as
+; this example shows.
+
+;Class=NewDeviceClass
+;ClassGUID={ff646f80-8def-11d2-9449-00105a075f6b}
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+
+;--------- SourceDiskNames and SourceDiskFiles Section -----------------------
+
+; These sections identify source disks and files for installation.  They are
+; shown here as an example, but commented out.
+
+;[SourceDisksNames]
+;1 = "Install Disk",Disk1,,
+
+;[SourceDisksFiles]
+;btcusb.sys = 1,,
+
+;--------- ClassInstall/ClassInstall32 Section -------------------------------
+
+; Not necessary if using a standard class
+
+; 9X Style
+[ClassInstall]
+Addreg=Class_AddReg
+
+; NT Style
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,%DeviceClassName%
+HKR,,Icon,,"-18"
+
+;--------- DestinationDirs Section -------------------------------------------
+
+[DestinationDirs]
+Btusb_Files_Driver = 10,System32\Drivers
+
+;--------- Manufacturer and Models Sections ----------------------------------
+
+[Manufacturer]
+%CSR%=CSR
+%AVNET%=AVNET
+%ALPS%=ALPS
+%ERICSSON%=ERICSSON
+%NATIONAL%=NATIONAL
+%SILICONWAVE%=SILICONWAVE
+%ZEEVO%=ZEEVO
+%SUPERBT%=SUPERBT
+%WavePlus%=WavePlus
+%TAIYOYUDEN%=TAIYOYUDEN
+%BROADCOM%=BROADCOM
+%Mitsumi%=Mitsumi
+%WLink%=WLink
+%Oki%=Oki
+%SAMSUNG%=SAMSUNG
+%TI%=TI
+%RTX%=RTX
+%Unknown%=Unknown
+%ST%=ST
+%IBM%=IBM
+%MicroSoft%=MicroSoft
+%TDK%=TDK
+%3COM%=3COM
+%BILLIONTON%=BILLIONTON
+%SMK%=SMK
+%Microtune%=Microtune
+%Arima%=Arima
+%Hitachi%=Hitachi
+%GctSemi%=GctSemi
+%MSI%=MSI
+%DELL%=DELL
+%COMPAQ%=COMPAQ
+%Winbond%=Winbond
+%ISSC%=ISSC
+%SmartModular%=SmartModular
+%Belkin%=Belkin
+%Air2U%=Air2U
+%HP%=HP
+%iTech%=iTech
+
+[CSR]
+;CSR
+%DeviceDesc%=Btusb_DDI, USB\VID_0A12&PID_0001
+%DeviceDesc%=Btusb_DDI, USB\VID_0A12&PID_ffff 
+
+[ALPS]
+;ALPS
+%DeviceDesc%=Btusb_DDI, USB\VID_044E&PID_3001
+%DeviceDesc%=Btusb_DDI, USB\VID_044e&PID_ffff
+
+[ERICSSON]
+;ERICSSON
+%DeviceDesc%=Btusb_DDI, USB\VID_0442&PID_ABBA
+%DeviceDesc%=Btusb_DDI, USB\VID_08EA&PID_ABBA
+%DeviceDesc%=Btusb_DDI, USB\VID_08EA&PID_ABBB
+
+[National]
+;NATIONAL
+%DeviceDesc%=BTusb_DDI, USB\VID_0400&PID_0807
+%DeviceDesc%=BTusb_DDI, USB\VID_0400&PID_080A
+
+[RTX]
+%DeviceDesc%=BTusb_DDI, USB\VID_0D9A&PID_0001
+
+[BROADCOM]
+;BROADCOM
+%DeviceDesc%=Btusb_DDI, USB\VID_0A5C&PID_201D
+%DeviceDesc%=Btusb_DDI, USB\VID_0A5C&PID_2039
+
+[SILICONWAVE]
+;SILICONWAVE
+%DeviceDesc%=Btusb_DDI, USB\VID_0525&PID_A220
+%DeviceDesc%=Btusb_DDI, USB\VID_0525&PID_100D
+%DeviceDesc%=Btusb_DDI, USB\VID_0c10&PID_0000
+
+[ZEEVO]
+;ZEEVO
+%DeviceDesc%=Btusb_DDI, USB\VID_0B7A&PID_07D0
+
+[SUPERBT]
+;SUPERBT
+%DeviceDesc%=Btusb_DDI, USB\VID_0BDB&PID_1000
+%DeviceDesc%=Btusb_DDI, USB\VID_0BDB&PID_1002
+
+[AVNET]
+;AVNET
+%DeviceDesc%=Btusb_DDI, USB\VID_0471&PID_0809
+
+[TAIYOYUDEN]
+;TAIYOYUDEN
+%DeviceDesc%=Btusb_DDI, USB\VID_0547&PID_7777
+
+[WavePlus]
+;WavePlus
+%DeviceDesc%=Btusb_DDI, USB\VID_0F57&PID_1002
+
+[WLink]
+;WLink
+%DeviceDesc%=Btusb_DDI, USB\VID_0A5C&PID_200A
+
+[Mitsumi]
+;Mitsumi
+%DeviceDesc%=Btusb_DDI, USB\VID_03EE&PID_641F
+%DeviceDesc%=Btusb_DDI, USB\VID_03EE&PID_6438
+
+[Oki]
+%DeviceDesc%=Btusb_DDI, USB\VID_04D7&PID_1BE4
+%DeviceDesc%=Btusb_DDI, USB\VID_070A&PID_4002
+%DeviceDesc%=Btusb_DDI, USB\VID_070A&PID_4003
+
+[SAMSUNG]
+%DeviceDesc%=Btusb_DDI, USB\VID_055D&PID_0BB1
+
+[TI]
+%DeviceDesc%=Btusb_DDI, USB\VID_0451&PID_1234
+%DeviceDesc%=Btusb_DDI, USB\VID_0451&PID_ffff
+
+[SmartModular]
+%DeviceDesc%=BTusb_DDI, USB\VID_0E39&PID_0137
+
+[Unknown]
+%DeviceDesc%=BTusb_DDI, USB\VID_08fd&PID_0001
+%DeviceDesc%=BTusb_DDI, USB\VID_0930&PID_0502
+
+[ST]
+%DeviceDesc%=BTusb_DDI, USB\VID_0483&PID_5000
+
+[IBM]
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_030A
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_030C
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0310
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0311
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0317
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0318
+%DeviceDesc%=BTusb_DDI, USB\VID_1668&PID_0441
+%DeviceDesc%=BTusb_DDI, USB\VID_1668&PID_1441
+
+[MicroSoft]
+%DeviceDesc%=BTusb_DDI, USB\VID_045E&PID_007E
+
+[TDK]
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0309
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0319
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_0320
+%DeviceDesc%=BTusb_DDI, USB\VID_04BF&PID_030B
+
+[3COM]
+%DeviceDesc%=BTusb_DDI, USB\VID_0506&PID_00A0
+
+[BILLIONTON]
+%DeviceDesc%=BTusb_DDI, USB\VID_0B62&PID_000B
+
+[SMK]
+%DeviceDesc%=BTusb_DDI, USB\VID_0609&PID_FF12
+
+[Microtune]
+%DeviceDesc%=BTusb_DDI, USB\VID_0F4D&PID_1000
+
+[Arima]
+%DeviceDesc%=BTusb_DDI, USB\VID_0471&PID_1201
+
+[Hitachi]
+%DeviceDesc%=BTusb_DDI, USB\VID_0858&PID_3102
+
+[GctSemi]
+%DeviceDesc%=BTusb_DDI, USB\VID_1076&PID_0031
+%DeviceDesc%=BTusb_DDI, USB\VID_1076&PID_0032
+
+[DELL]
+%DeviceDesc%=BTusb_DDI, USB\VID_413C&PID_8000
+%DeviceDesc%=BTusb_DDI, USB\VID_413C&PID_8010
+
+[COMPAQ]
+%DeviceDesc%=BTusb_DDI,   USB\VID_049F&PID_0027 
+%DeviceDesc%=BTusb_DDI,   USB\VID_049F&PID_0036
+
+[MSI]
+%DeviceDesc%=BTusb_DDI,   USB\VID_0DB0&PID_1967 
+%DeviceDesc%=BTusb_DDI,   USB\VID_0DB0&PID_ffff 
+%DeviceDesc%=BTusb_DDI,   USB\VID_0DB0&PID_6855 
+%DeviceDesc%=BTusb_DDI,   USB\VID_0DB0&PID_6970 
+
+[SONY]
+%DeviceDesc%=BTusb_DDI,   USB\VID_044e&PID_2014
+
+[Winbond]
+%DeviceDesc%=BTusb_DDI,   USB\VID_1046&PID_8901
+%DeviceDesc%=BTusb_DDI,   USB\VID_1131&PID_1001
+
+[Belkin]
+%DeviceDesc%=BTusb_DDI, USB\VID_050D&PID_0081
+%DeviceDesc%=BTusb_DDI, USB\VID_050d&PID_0084
+
+[Air2U]
+%DeviceDesc%=BTusb_DDI, USB\VID_1310&PID_0001
+
+[HP]
+%DeviceDesc%=BTusb_DDI, USB\VID_049F&PID_0086
+
+[iTech]
+%DeviceDesc%=BTusb_DDI, USB\VID_13DD&PID_0001
+
+;---------- DDInstall Sections -----------------------------------------------
+; --------- Windows 9X -----------------
+
+; Experimentation has shown that DDInstall root names greater than 19 characters
+; cause problems in Windows 98
+
+[Btusb_DDI]
+CopyFiles=Btusb_Files_Driver
+AddReg=Btusb_9X_AddReg
+
+[Btusb_9X_AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,btcusb.sys
+HKR, "Parameters", "BreakOnEntry", 0x00010001, 0
+
+; --------- Windows NT -----------------
+
+[Btusb_DDI.NT]
+CopyFiles=Btusb_Files_Driver
+AddReg=Btusb_NT_AddReg
+
+[Btusb_DDI.NT.Services]
+Addservice = Btcsrusb, 0x00000002, Btusb_AddService
+
+[Btusb_AddService]
+DisplayName    = %SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\btcusb.sys
+
+[Btusb_NT_AddReg]
+HKLM, "System\CurrentControlSet\Services\Btcsrusb\Parameters",\
+	"BreakOnEntry", 0x00010001, 0
+
+; --------- Files (common) -------------
+
+[Btusb_Files_Driver]
+;btcusb.sys
+
+;--------- Strings Section ---------------------------------------------------
+
+[Strings]
+ProviderName="IVT Corporation"
+
+;manufacuure
+CSR="CSR"
+AVNET="AVNET"
+ALPS="ALPS"
+ERICSSON="ERICSSON"
+NATIONAL="NATIONAL"
+SILICONWAVE="SILICONWAVE"
+ZEEVO="ZEEVO"
+SUPERBT="SUPERBT"
+WavePlus="WavePlus"
+TAIYOYUDEN="TAIYO YUDEN"
+BROADCOM="BROADCOM"
+WLink="WLink"
+Mitsumi="Mitsumi"
+Oki="Oki"
+SAMSUNG="SAMSUNG"
+TI="TI"
+RTX="RTX"
+Unknown="Unknown"
+ST="ST Micro"
+IBM="IBM"
+MicroSoft="MicroSoft"
+TDK="TDK"
+3COM="3COM"
+BILLIONTON="BILLIONTON"
+SMK="SMK"
+Microtune="Microtune"
+Arima="Arima"
+Hitachi="Hitachi"
+GctSemi="GctSemi"
+DELL="DELL"
+COMPAQ="COMPAQ"
+MSI="MSI"
+SONY="SONY"
+Air2U="Air2U"
+HP="HP"
+iTech="i.Tech Dynamic"
+
+;descrption
+DeviceDesc="Bluetooth USB Dongle"
+DeviceClassName="Bluetooth USB Dongle"
+SvcDesc="Bluetooth USB For Bluetooth Service"

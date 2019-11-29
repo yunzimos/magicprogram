@@ -1,0 +1,1 @@
+cmd_/home/sprife/UP-Magic/UP-Magic_Moudles/touch_button/driver/magic_hall_switch.ko := arm-linux-ld -EL -r    -o /home/sprife/UP-Magic/UP-Magic_Moudles/touch_button/driver/magic_hall_switch.ko /home/sprife/UP-Magic/UP-Magic_Moudles/touch_button/driver/magic_hall_switch.o /home/sprife/UP-Magic/UP-Magic_Moudles/touch_button/driver/magic_hall_switch.mod.o

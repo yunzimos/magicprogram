@@ -1,0 +1,1 @@
+cmd_/root/HOME/UP-Magic6410/module/leds/driver/magic_leds.ko := /usr/local/arm/4.3.1-eabi-armv6/usr/bin/arm-linux-ld -EL  -r -o /root/HOME/UP-Magic6410/module/leds/driver/magic_leds.ko /root/HOME/UP-Magic6410/module/leds/driver/magic_leds.o /root/HOME/UP-Magic6410/module/leds/driver/magic_leds.mod.o

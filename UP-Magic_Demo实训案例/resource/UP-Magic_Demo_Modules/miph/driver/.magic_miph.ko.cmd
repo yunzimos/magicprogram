@@ -1,0 +1,1 @@
+cmd_/root/HOME/UP-Magic6410/Demo/Modules/miph/driver/magic_miph.ko := /usr/local/arm/4.3.1-eabi-armv6/usr/bin/arm-linux-ld -EL  -r -o /root/HOME/UP-Magic6410/Demo/Modules/miph/driver/magic_miph.ko /root/HOME/UP-Magic6410/Demo/Modules/miph/driver/magic_miph.o /root/HOME/UP-Magic6410/Demo/Modules/miph/driver/magic_miph.mod.o

@@ -1,0 +1,1 @@
+cmd_/root/HOME/UP-Magic6410/module/buzzer/driver/magic_gpio.ko := /usr/local/arm/4.3.1-eabi-armv6/usr/bin/arm-linux-ld -EL  -r -o /root/HOME/UP-Magic6410/module/buzzer/driver/magic_gpio.ko /root/HOME/UP-Magic6410/module/buzzer/driver/magic_gpio.o /root/HOME/UP-Magic6410/module/buzzer/driver/magic_gpio.mod.o

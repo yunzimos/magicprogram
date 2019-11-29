@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/about.png</file>
+        <file>images/apply.png</file>
+        <file>images/next.png</file>
+        <file>images/previous.png</file>
+        <file>images/zoomin.png</file>
+        <file>images/zoomnormal.png</file>
+        <file>images/zoomout.png</file>
+        <file>images/transitionimage.gif</file>
+        <file>images/matrix.png</file>
+        <file>images/buzzer.png</file>
+        <file>images/led.png</file>
+        <file>images/motor.png</file>
+        <file>images/on.png</file>
+        <file>images/off.png</file>
+        <file>images/bg.png</file>
+    </qresource>
+</RCC>

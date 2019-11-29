@@ -1,0 +1,10 @@
+prefix=/usr/local/Trolltech/qt-embedded-linux-opensource-src-4.4.0/tslib1.4-install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: tslib
+Description: Touchscreen Access Library
+Version: 0.0.2
+Libs: -L${libdir} -lts
+Cflags: -I${includedir}

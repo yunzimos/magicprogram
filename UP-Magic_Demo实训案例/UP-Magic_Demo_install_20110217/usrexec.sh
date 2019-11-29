@@ -1,0 +1,15 @@
+cd /mnt/yaffs
+insmod /mnt/yaffs/s3c-ts.ko
+export QTDIR=$PWD
+export LD_LIBRARY_PATH=$PWD/lib
+export TSLIB_TSDEVICE=/dev/event1
+export TSLIB_PLUGINDIR=$PWD/lib/ts
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_CONFFILE=$PWD/etc/ts.conf
+export POINTERCAL_FILE=$PWD/etc/ts-calib.conf
+export QWS_MOUSE_PROTO=tslib:/dev/event1
+export TSLIB_CALIBFILE=$PWD/etc/ts-calib.conf
+export LANG=zh_CN
+export QWS_DISPLAY="LinuxFb:mmWidth160:mmHeight120:0"
+export QT_QWS_FONTDIR=$PWD/lib/fonts
+/mnt/yaffs/UP-Magic -qws
